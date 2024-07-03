@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/protam113/xlr_web/static/css/main.8b71ef78.css",
+    "main.js": "/protam113/xlr_web/static/js/main.c591ba6b.js",
+    "static/js/453.fe67b31c.chunk.js": "/protam113/xlr_web/static/js/453.fe67b31c.chunk.js",
+    "static/media/Logo.png": "/protam113/xlr_web/static/media/Logo.128a6cb05985a2c32970.png",
+    "index.html": "/protam113/xlr_web/index.html",
+    "main.8b71ef78.css.map": "/protam113/xlr_web/static/css/main.8b71ef78.css.map",
+    "main.c591ba6b.js.map": "/protam113/xlr_web/static/js/main.c591ba6b.js.map",
+    "453.fe67b31c.chunk.js.map": "/protam113/xlr_web/static/js/453.fe67b31c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b71ef78.css",
+    "static/js/main.c591ba6b.js"
+  ]
+}
