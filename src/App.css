@@ -1,38 +1,227 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.red_gradient {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #f56565, #c53030);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* banner */
+.grid1 {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr); 
+  gap: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.square {
+  width: 100%;
+  padding-top: 80%;
+  background-color: #d1d5db;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.head_text {
+  margin-top: 1.25rem;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: black;
+
+}
+
+/* contact */
+/* button */
+.submit-button {
+  display: flex;
+  justify-content: center; 
+}
+
+.submit-button button {
+  width: 200px;
+  margin: 0 auto; 
+}
+
+/* nav */
+#logo{
+  width: 80px;
+}
+
+/* animation */
+@keyframes orbit-1 {
+  0% {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes orbit-2 {
+  0% {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(150px) rotate(360deg);
+  }
+}
+
+@keyframes orbit-3 {
+  0% {
+    transform: rotate(0deg) translateX(200px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(200px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-4 {
+  0% {
+    transform: rotate(0deg) translateX(250px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(250px) rotate(360deg);
+  }
+}
+
+@keyframes orbit-5 {
+  0% {
+    transform: rotate(0deg) translateX(300px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(300px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-6 {
+  0% {
+    transform: rotate(0deg) translateX(350px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(350px) rotate(360deg);
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.electron {
+  position: absolute;
+  width: 50px;
+  height: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  border-radius: 50%;
+  background-color: #3490dc;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: transform 0.5s ease, background-color 0.3s ease;
+}
+
+.electron:hover {
+  background-color: #ffcc00;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.orbit {
+  position: absolute;
+  width: 100px; /* Diameter of the orbit */
+  height: 100px; /* Diameter of the orbit */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.orbit-1 {
+  animation: orbit-1 4s linear infinite;
+}
+
+.orbit-2 {
+  animation: orbit-2 6s linear infinite;
+}
+
+.orbit-3 {
+  animation: orbit-3 8s linear infinite;
+}
+
+.orbit-4 {
+  animation: orbit-4 10s linear infinite;
+}
+
+.orbit-5 {
+  animation: orbit-5 12s linear infinite;
+}
+
+.orbit-6 {
+  animation: orbit-6 14s linear infinite;
+}
+
+.orbit.align {
+  animation: none;
+}
+
+.orbit-1.align .electron {
+  transform: translateX(-150px) translateY(-100px);
+}
+
+.orbit-2.align .electron {
+  transform: translateX(-90px) translateY(-100px);
+}
+
+.orbit-3.align .electron {
+  transform: translateX(-30px) translateY(-100px);
+}
+
+.orbit-4.align .electron {
+  transform: translateX(30px) translateY(-100px);
+}
+
+.orbit-5.align .electron {
+  transform: translateX(90px) translateY(-100px);
+}
+
+.orbit-6.align .electron {
+  transform: translateX(150px) translateY(-100px);
+}
+
+.nucleus {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #059669;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+}
+
+
+.orbit:hover .popup {
+  display: block;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  z-index: 20;
 }

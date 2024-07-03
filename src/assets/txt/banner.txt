@@ -1,0 +1,44 @@
+import React, { useEffect } from 'react';
+import '../assets/css/banner.css';
+
+
+const AnimatedGrid = () => {
+    useEffect(() => {
+        const squares = document.querySelectorAll('.square');
+        squares.forEach((square) => {
+            setInterval(() => {
+                square.style.backgroundColor = randomColor();
+            }, Math.random() * 1000 + 500); // Random interval between 500ms and 1500ms
+        });
+    }, []);
+
+    const randomColor = () => {
+        const colors = ['#7dd3fc', '#d8b4fe', '#fca5a5', '#86efac', '#67e8f9', '#cbd5e1'];
+        return colors[Math.floor(Math.random() * colors.length)];
+    };
+
+    return (
+        <div className="relative w-full h-screen bg-gray-100 overflow-hidden">
+            <h1 className="head_text text-center mb-4 z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
+                Welcome to <span className='text-red-500 font-extrabold red_gradient'>XLR Team</span>
+                <br className="max-md:hidden" />
+                <span className='block text-xl mt-2'>
+                    Your <span className='text-blue-500 font-bold'>full-stack web design experts</span> specializing in both 
+                    <span className='text-green-500 font-bold'> backend</span> and 
+                    <span className='text-green-500 font-bold'> frontend</span> development.
+                </span>
+            </h1>
+            <div className="grid grid-cols-10 gap-1 absolute top-0 left-0 w-full h-full">
+                {Array.from({ length: 100 }, (_, i) => (
+                    <div
+                        key={i}
+                        className="square w-full h-full"
+                        style={{ backgroundColor: randomColor() }}
+                    ></div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default AnimatedGrid;

@@ -1,0 +1,124 @@
+import { Link
+    // , useNavigate 
+} from "react-router-dom"
+import Logo from "../assets/image/Logo.png"
+import "../assets/css/nav.css"
+// import { IoIosArrowDown } from "react-icons/io"
+import { FiList } from 'react-icons/fi'
+import React
+, { 
+useState } 
+from "react"
+
+
+const Navbar = () => {
+    const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+    const [show, setShow] = useState(false);
+
+    const toggleNavbar = () => {
+        setIsMobileNavVisible(!isMobileNavVisible);
+    };
+
+    return (
+        <div className="w-full bg-gray-100 sticky top-0 z-50">
+            <div className="mx-auto flex w-full max-w-7xl justify-between px-8 py-5 text-sm">
+                <div className="flex items-center">
+                    <section className="mr-10">
+                        <a href="/">
+                            <img src={Logo} alt="Logo" id="logo" />
+                        </a>
+                    </section>
+                    <section className=
+                    {`${show ? "navLinks showmenu" : "navLinks"} hidden md:flex flex-1 justify-center items-center`}
+                    id="navbar">
+                        <Link to="/" className='relative group px-8 py-3 transition-all' onClick={() => setShow(!show)}>
+                            <p className='flex cursor-pointer items-center gap-2 text-black group-hover:text-gray-600'>
+                                <span>Home</span>
+                            </p>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
+
+                        <Link to="/" className='relative group px-8 py-3 transition-all' 
+                        onClick={() => setShow(!show)}
+                        >
+                            <p className='flex cursor-pointer items-center gap-2 text-black group-hover:text-gray-600'>
+                                <span>About Us</span>
+                            </p>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
+                        <Link to="/" className='relative group px-8 py-3 transition-all' 
+                        onClick={() => setShow(!show)}
+                        >
+                            <p className='flex cursor-pointer items-center gap-2 text-black group-hover:text-gray-600'>
+                                <span>Product</span>
+                            </p>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
+                        {/* <Link to="/" className='relative group px-8 py-3 transition-all' 
+                        onClick={() => setShow(!show)}
+                        >
+                            <p className='flex cursor-pointer items-center gap-2 text-black group-hover:text-gray-600'>
+                                <span>Document</span>
+                                <IoIosArrowDown className='rotate-180 transition-all group-hover:rotate-0' />
+                            </p>
+                            <div className='absolute right-0 top hidden w-auto flex-col gap-1 rounded-lg bg-gray-300 py-3 shadow-md transition-all group-hover:flex'>
+                                <Link to="/solution" className='flex cursor-pointer items-center py-1 pl-6 pr-8 text-black hover:text-gray-600' 
+                                onClick={() => setShow(!show)}
+                                >
+                                    <span>Solution</span>
+                                </Link>
+                                <Link to="" className='flex cursor-pointer items-center py-1 pl-6 pr-8 text-black hover:text-gray-600' 
+                                onClick={() => setShow(!show)}
+                                >
+                                    <span>Video</span>
+                                </Link>
+                            </div>
+                        </Link> */}
+                        <Link to="/service" className='relative group px-8 py-3 transition-all' 
+                        onClick={() => setShow(!show)}
+                        >
+                            <p className='flex cursor-pointer items-center gap-2 text-black group-hover:text-gray-600'>
+                                <span>Services</span>
+                            </p>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
+                    </section>
+                </div>
+                <section className='hidden md:flex items-center space-x-4'>
+                    <Link to={"/contact_us"} className='bg-red-200 hover:bg-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-black hover:text-white'>
+                        Contact Us
+                    </Link>
+                </section>
+                <FiList className='cursor-pointer text-5xl md:hidden' style={{ color: 'black' }} 
+                onClick={toggleNavbar} 
+
+                />
+            </div>
+            {isMobileNavVisible && (
+    <div className="md:hidden flex flex-col items-end bg-gray-300 text-black py-5 px-5">
+        <Link to="/" className='block py-4 text-lg' onClick={() => setShow(!show)}>
+            Home
+        </Link>
+        <Link to="/about_us" className='block py-4 text-lg' onClick={() => setShow(!show)}>
+            About Us
+        </Link>
+        <Link to="/product" className='block py-4 text-lg' onClick={() => setShow(!show)}>
+            Product
+        </Link>
+        {/* <Link to="/document" className='block py-4 text-lg' onClick={() => setShow(!show)}>
+            Document
+        </Link> */}
+        <Link to="/services" className='block py-4 text-lg' onClick={() => setShow(!show)}>
+            Services
+        </Link>
+        <Link to="/contact_us" className='block py-4 text-lg' onClick={() => setShow(!show)}>
+            Contact Us
+        </Link>
+    </div>
+)}
+
+        </div>
+    );
+};
+
+export default Navbar;

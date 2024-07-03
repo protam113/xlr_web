@@ -1,0 +1,128 @@
+.relative {
+  position: relative;
+}
+
+.nucleus {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #e3342f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2); /* Add a gray circle */
+}
+
+/* Adjust orbits to be relative to the nucleus */
+.orbit {
+  position: absolute;
+  width: 100px; /* Diameter of the orbit */
+  height: 100px; /* Diameter of the orbit */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  z-index: 5; /* Ensure orbits are below nucleus */
+}
+
+/* Adjust positions of orbits relative to the nucleus */
+.orbit-1 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.orbit-2 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(60deg);
+}
+
+.orbit-3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.orbit-4 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.orbit-5 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(240deg);
+}
+
+.orbit-6 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(300deg);
+}
+
+.electron {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #3490dc;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: transform 0.5s ease, background-color 0.3s ease;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.orbit.align .electron {
+  animation: none;
+}
+
+.orbit-1.align .electron {
+  transform: translate(-50%, -150px);
+}
+
+.orbit-2.align .electron {
+  transform: translate(43.3%, -125px);
+}
+
+.orbit-3.align .electron {
+  transform: translate(43.3%, -75px);
+}
+
+.orbit-4.align .electron {
+  transform: translate(-50%, -50px);
+}
+
+.orbit-5.align .electron {
+  transform: translate(-43.3%, -75px);
+}
+
+.orbit-6.align .electron {
+  transform: translate(-43.3%, -125px);
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  z-index: 20;
+}
