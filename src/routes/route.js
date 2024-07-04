@@ -5,7 +5,6 @@ const publicRoutes = [
     { path: '/', component: home
         , layout: DefaultLayout 
     },
-  // Các route khác
 ];
 
 const privateRoutes = [];

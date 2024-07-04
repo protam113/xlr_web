@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiBatteryCharging, FiWifi } from "react-icons/fi";
+import { FaReact } from "react-icons/fa";
 import { useTheme } from "../../context/themeContext"; // Import useTheme hook
 
 const Example = () => {
@@ -21,7 +22,7 @@ const FloatingPhone = () => {
         transformStyle: "preserve-3d",
         transform: "rotateY(-30deg) rotateX(15deg)",
       }}
-      className={`rounded-[24px] ${theme === 'dark' ? 'bg-neutral-800' : 'bg-violet-500'}`}
+      className={`rounded-[24px] ${theme === 'dark' ? 'bg-violet-500' : 'bg-violet-500'}`}
     >
       <motion.div
         initial={{
@@ -64,26 +65,8 @@ const Screen = () => {
 
   return (
     <div className='relative z-0 grid h-full w-full place-content-center overflow-hidden rounded-[20px] bg-white'>
-      {/* Example logo from logoispum */}
-      <svg
-        width="50"
-        height="39"
-        viewBox="0 0 50 39"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className='fill-violet-500'
-      >
-        <path
-          d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
-          stopColor="#000000"
-        ></path>
-        <path
-          d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
-          stopColor="#000000"
-        ></path>
-      </svg>
-
-      <button className={`absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-${theme === 'dark' ? 'neutral-900' : 'white'} py-2 text-sm font-medium text-${theme === 'dark' ? 'violet-500' : 'violet-500'} backdrop-blur`}>
+      <FaReact className='fill-violet-500 text-5xl'/>
+      <button className={`absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-${theme === 'dark' ? 'neutral-900' : 'white'}  py-2 text-sm font-medium text-${theme === 'dark' ? 'white' : 'violet-500'} backdrop-blur`}>
         Get Started
       </button>
 

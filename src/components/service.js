@@ -20,7 +20,7 @@ const Services = () => {
             </div>
             <div className="mt-4">
               <h3 className="text-xl font-bold mb-2">Web Development</h3>
-              <p className="text-gray-700">Using <span className="font-bold">React.js</span> to build modern web applications.</p>
+              <p>Using <span className="font-bold">React.js</span> to build modern web applications.</p>
             </div>
           </div>
 
@@ -31,7 +31,7 @@ const Services = () => {
             </div>
             <div className="mt-4">
               <h3 className="text-xl font-bold mb-2">Backend Development</h3>
-              <p className="text-gray-700">Building scalable APIs with <span className="font-bold">Python</span>.</p>
+              <p>Building scalable APIs with <span className="font-bold">Python</span>.</p>
             </div>
           </div>
 
@@ -42,7 +42,7 @@ const Services = () => {
             </div>
             <div className="mt-4">
               <h3 className="text-xl font-bold mb-2">Database Management</h3>
-              <p className="text-gray-700">Designing efficient databases for your applications.</p>
+              <p>Designing efficient databases for your applications.</p>
             </div>
           </div>
 
@@ -53,7 +53,7 @@ const Services = () => {
             </div>
             <div className="mt-4">
               <h3 className="text-xl font-bold mb-2">Mobile & Desktop Apps</h3>
-              <p className="text-gray-700">Developing apps with <span className="font-bold">Flutter</span> and <span className="font-bold">React Native</span>.</p>
+              <p>Developing apps with <span className="font-bold">Flutter</span> and <span className="font-bold">React Native</span>.</p>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ const Services = () => {
             </div>
             <div className="mt-4">
               <h3 className="text-xl font-bold mb-2">Python Backend</h3>
-              <p className="text-gray-700">Backend solutions with <span className="font-bold">Python</span>.</p>
+              <p>Backend solutions with <span className="font-bold">Python</span>.</p>
             </div>
           </div>
 
@@ -75,7 +75,7 @@ const Services = () => {
             </div>
             <div className="mt-4">
               <h3 className="text-xl font-bold mb-2">Java Backend</h3>
-              <p className="text-gray-700">Backend solutions with <span className="font-bold">Java</span> <span className='text-gray-400'>(coming soon)</span>.</p>
+              <p>Backend solutions with <span className="font-bold">Java</span> <span className='text-gray-400'>(coming soon)</span>.</p>
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@ const WorkingProcess = () => {
 
   return (
     <div className="relative flex flex-col items-center">
-      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-300"></div>
+      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 "></div>
       {steps.map((step, index) => (
         <div
           key={index}
@@ -52,9 +52,9 @@ const WorkingProcess = () => {
               </ul>
             </div>
           </div>
-          {index < steps.length - 1 && (
+          {/* {index < steps.length - 1 && (
             <div className="absolute left-1/2 transform -translate-x-1/2 h-10 w-1 bg-gray-300"></div>
-          )}
+          )} */}
         </div>
       ))}
     </div>

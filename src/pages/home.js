@@ -9,6 +9,7 @@ import { FiChevronUp } from 'react-icons/fi';
 import WorkingProcess from '../components/working_process';
 import {ReactIconsExample} from '../components/animation/reveallinks'
 import Example from '../components/animation/mobile';
+import ShuffleHero from '../components/advertisement';
 
 const Home = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -39,6 +40,7 @@ const Home = () => {
             <Banner />
         </div>
       <div className="max-w-7xl mx-auto px-4 pt-3 pb-6">
+        <ShuffleHero/>
         <div id="about" className="max-w-screen-lg mx-auto px-4">
             <About />
         </div>

@@ -7,10 +7,14 @@ import {
 import { FaReact, FaNodeJs, FaNpm, FaJsSquare,  FaGoogle } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
 import { useAnimate } from "framer-motion";
+import { useTheme } from "../../context/themeContext";
+
 
 export const ReactIconsExample = () => {
+  const { theme } = useTheme();
+
   return (
-    <div className="bg-neutral-50 px-4 py-12">
+    <div className={`${theme === 'dark' ? 'bg-slate-900' : 'bg-white'} px-4 py-12`}>
       <div className="mx-auto max-w-7xl">
         <ClipPathLinks />
       </div>
@@ -19,38 +23,40 @@ export const ReactIconsExample = () => {
 };
 
 const ClipPathLinks = () => {
+  const { theme } = useTheme();
+
   return (
-    <div className="divide-y divide-neutral-900 border border-neutral-900">
-        <div className="grid grid-cols-2 divide-x divide-neutral-900">
-            <div className="flex items-center justify-center">
+    <div className={`divide-y  ${theme === 'dark' ? 'divide-neutral-200' : 'divide-neutral-900  '} border  ${theme === 'dark' ? 'border-neutral-200' : 'border-neutral-900  '}`}>
+        <div className={`grid grid-cols-2 divide-x ${theme === 'dark' ? 'divide-neutral-200' : 'divide-neutral-900  '}`}>
+            <div className={`flex items-center justify-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 <LinkBox Icon={SiNextdotjs} href="#" />
             </div>
-            <div className="flex items-center justify-center">
+            <div className={`flex items-center justify-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 <LinkBox Icon={SiRedux} href="#" />
             </div>
         </div>
-        <div className="grid grid-cols-4 divide-x divide-neutral-900">
-            <div className="flex items-center justify-center">
+        <div className={`grid grid-cols-4 divide-x ${theme === 'dark' ? 'divide-neutral-200' : 'divide-neutral-900  '}`}>
+            <div className={`flex items-center justify-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 <LinkBox Icon={FaNodeJs} href="#" />
             </div>
-            <div className="flex items-center justify-center">
+            <div className={`flex items-center justify-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 <LinkBox Icon={FaJsSquare} href="#" />
             </div>
-            <div className="flex items-center justify-center">
+            <div className={`flex items-center justify-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 <LinkBox Icon={FaReact} href="#" />
             </div>
-            <div className="flex items-center justify-center">
+            <div className={`flex items-center justify-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 <LinkBox Icon={SiWebpack} href="#" />
             </div>
         </div>
-        <div className="grid grid-cols-3 divide-x divide-neutral-900">
-            <div className="flex items-center justify-center">
+        <div className={`grid grid-cols-3 divide-x ${theme === 'dark' ? 'divide-neutral-200' : 'divide-neutral-900  '}`}>
+            <div className={`flex items-center justify-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 <LinkBox Icon={IoLogoVercel} href="#" />
             </div>
-            <div className="flex items-center justify-center">
+            <div className={`flex items-center justify-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 <LinkBox Icon={FaNpm} href="#" />
             </div>
-            <div className="flex items-center justify-center">
+            <div className={`flex items-center justify-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 <LinkBox Icon={FaGoogle} href="#" />
             </div>
     </div>
@@ -80,6 +86,7 @@ const EXIT_KEYFRAMES = {
 };
 
 const LinkBox = ({ Icon, href }) => {
+  const { theme } = useTheme();
   const [scope, animate] = useAnimate();
 
   const getNearestSide = (e) => {
@@ -146,9 +153,9 @@ const LinkBox = ({ Icon, href }) => {
         style={{
           clipPath: BOTTOM_RIGHT_CLIP,
         }}
-        className="absolute inset-0 grid place-content-center bg-neutral-900 text-white"
+        className={`absolute inset-0 grid place-content-center ${theme === 'dark' ? 'bg-white' : 'bg-slate-900'}  ${theme === 'dark' ? 'text-slate-900' : 'text-white'}`}
       >
-        <Icon className="text-xl sm:text-3xl md:text-4xl" />
+        <Icon className={`text-xl sm:text-3xl md:text-4xl ${theme === 'dark' ? 'text-slate-900' : 'text-white'}`} />
       </div>
     </a>
   );
