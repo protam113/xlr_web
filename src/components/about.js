@@ -1,10 +1,10 @@
 import React from 'react';
 import { SiFlutter, SiElectron } from 'react-icons/si';
 import { FaReact } from "react-icons/fa";
-import { useTheme } from '../context/themeContext'; // Đảm bảo import useTheme từ context của bạn
+import { useTheme } from '../context/themeContext';
 
 const About = () => {
-  const { theme } = useTheme(); // Lấy theme hiện tại từ context
+  const { theme } = useTheme();
 
   return (
     <div className={`py-12 ${theme === 'dark' ? 'bg-slate-900 text-white' : 'bg-white text-gray-800'}`}>

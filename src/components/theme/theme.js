@@ -17,8 +17,8 @@ const ThemeToggle = () => {
         }`}
         onClick={toggleTheme}
       >
-        <FiMoon className="relative z-10 text-lg md:text-sm" />
-        <span className="relative z-10">Light</span>
+        <FiMoon className="relative z-10 text-4xl md:text-sm font-bold" />
+        {/* <span className="relative z-10">Light</span> */}
       </button>
       <button
         className={`${TOGGLE_CLASSES} ${
@@ -26,8 +26,8 @@ const ThemeToggle = () => {
         }`}
         onClick={toggleTheme}
       >
-        <FiSun className="relative z-10 text-lg md:text-sm" />
-        <span className="relative z-10">Dark</span>
+        <FiSun className="relative z-10 text-4xl md:text-sm  font-bold" />
+        {/* <span className="relative z-10">Dark</span> */}
       </button>
       <div
         className={`absolute inset-0 z-0 flex ${
