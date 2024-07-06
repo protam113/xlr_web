@@ -85,7 +85,7 @@ const Navbar = () => {
         />
       </div>
       {isMobileNavVisible && (
-        <div className={`md:hidden flex flex-col items-end  ${theme === 'light' ? 'bg-gray-300' : 'bg-black'} ${theme === 'light' ? 'text-black' : 'text-white'} py-5 px-5`}>
+        <div className={ `w-full md:hidden flex flex-col items-end  ${theme === 'light' ? 'bg-gray-300' : 'bg-black'} ${theme === 'light' ? 'text-black' : 'text-white'} py-5 px-5`}>
           <a
             href="#banner"
             className="block py-4 text-lg"

@@ -35,7 +35,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className='w-full'>
         <div id="banner">
             <Banner />
         </div>

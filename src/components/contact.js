@@ -14,7 +14,7 @@ const Contact = () => {
     formData.append("access_key", "010669c1-302a-4e93-a1ca-b7df1e431cab");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+        const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
     });
@@ -62,7 +62,7 @@ const Contact = () => {
                     </div>
                     <div>
                         <label className="block text-gray-700 font-medium mb-1">Your mail</label>
-                        <input type="tel" name="mail" placeholder="Enter your phone number" required className="w-full px-4 py-2 bg-gray-100 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"/>
+                        <input type="mail" name="mail" placeholder="Enter your mail" required className="w-full px-4 py-2 bg-gray-100 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"/>
                     </div>
                     <div>
                         <label className="block text-gray-700 font-medium mb-1">Phone number</label>

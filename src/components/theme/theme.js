@@ -1,44 +1,39 @@
-// Example.js (renamed to ThemeToggle.js)
-import { motion } from "framer-motion";
-import { FiMoon, FiSun } from "react-icons/fi";
 import { useTheme } from "../../context/themeContext";
-
-const TOGGLE_CLASSES =
-  "text-sm font-medium flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-3 md:py-1.5 transition-colors relative z-10";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="relative flex items-center rounded-full">
-      <button
-        className={`${TOGGLE_CLASSES} ${
-          theme === "light" ? "text-white" : "text-slate-300"
-        }`}
-        onClick={toggleTheme}
-      >
-        <FiMoon className="relative z-10 text-4xl md:text-sm font-bold" />
-        {/* <span className="relative z-10">Light</span> */}
-      </button>
-      <button
-        className={`${TOGGLE_CLASSES} ${
-          theme === "dark" ? "text-white" : "text-slate-800"
-        }`}
-        onClick={toggleTheme}
-      >
-        <FiSun className="relative z-10 text-4xl md:text-sm  font-bold" />
-        {/* <span className="relative z-10">Dark</span> */}
-      </button>
+    <div className="relative">
       <div
-        className={`absolute inset-0 z-0 flex ${
-          theme === "dark" ? "justify-end" : "justify-start"
-        }`}
+        className={`w-20 h-10 ${
+          theme === "dark" ? "bg-gradient-to-r from-gray-400 to-gray-600" : "bg-gradient-to-r from-pink-300 to-pink-500"
+        } rounded-full relative`}
       >
-        <motion.span
-          layout
-          transition={{ type: "spring", damping: 15, stiffness: 250 }}
-          className="h-full w-1/2 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600"
+        <input
+          id="check-5"
+          type="checkbox"
+          className="absolute opacity-0 w-full h-full cursor-pointer"
+          checked={theme === "dark"}
+          onChange={toggleTheme}
         />
+        <label
+          htmlFor="check-5"
+          className="block w-full h-full rounded-full transition-all duration-300 cursor-pointer relative"
+        >
+          <span
+            className={`absolute top-1/2 transform -translate-y-1/2 transition-all duration-300 flex items-center justify-center w-6 h-6 bg-white rounded-full shadow-lg ${
+              theme === "dark" ? "right-1" : "left-1"
+            }`}
+          >
+            {theme === "dark" ? (
+              <FiMoon className="text-gray-600 transition-opacity duration-300 opacity-100" />
+            ) : (
+              <FiSun className="text-yellow-500 transition-opacity duration-300 opacity-100" />
+            )}
+          </span>
+        </label>
       </div>
     </div>
   );

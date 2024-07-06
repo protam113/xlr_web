@@ -1,7 +1,7 @@
 import React from 'react';
 import { SiZalo } from "react-icons/si";
 import { AiFillTikTok } from "react-icons/ai";
-import { FaTelegramPlane, FaFacebookSquare, FaWhatsappSquare  } from "react-icons/fa";
+import { FaTelegramPlane, FaFacebookSquare, FaWhatsappSquare,FaInstagram   } from "react-icons/fa";
 import { BiMailSend } from 'react-icons/bi';
 import { AiOutlinePhone } from 'react-icons/ai';
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -20,14 +20,14 @@ const Footer = () => {
             development.
           </p>
           <div className="flex gap-6 pb-5">
-            <a href="https://link_to_facebook" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/XLR.Team" target="_blank" rel="noopener noreferrer">
               <FaFacebookSquare className="text-2xl text-black cursor-pointer hover:text-red-400" />
             </a>
-            <a href="https://www.tiktok.com/@xlr.team03?_t=8neyjldfMXf&_r=1&fbclid=IwZXh0bgNhZW0CMTAAAR07JSflNavTwAuJef6NdQ4GP_ErGzbhqkIB5R67qnZS0Q0EYkYwvxgskoo_aem_SFgx8eRIy5yV1saUXP3saw" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.tiktok.com/@xlr.team03" target="_blank" rel="noopener noreferrer">
               <AiFillTikTok className="text-2xl text-black cursor-pointer hover:text-red-400" />
             </a>
-            <a href="http://localhost:3001" target="_blank" rel="noopener noreferrer">
-              <FaTelegramPlane className="text-2xl text-black cursor-pointer hover:text-red-400" />
+            <a href="https://www.instagram.com/_xlr.team03_/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="text-2xl text-black cursor-pointer hover:text-red-400" />
             </a>
             <a href="https://x.com/XLRTeam03" target="_blank" rel="noopener noreferrer">
               <FaSquareXTwitter className="text-2xl text-black cursor-pointer hover:text-red-400" />
