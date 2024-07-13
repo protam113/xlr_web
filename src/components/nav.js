@@ -1,17 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Logo from '../assets/image/Logo.png';
 import { FiList } from 'react-icons/fi';
 import ThemeToggle from './theme/theme';
-import { useTheme } from '../context/themeContext'; // Đảm bảo import useTheme từ context
+import { useTheme } from '../context/themeContext';
 
 const Navbar = () => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
-  const [show, setShow] = useState(false);
-  const { theme } = useTheme(); // Lấy theme từ context
+  const { theme } = useTheme();
+  const mobileNavRef = useRef(null);
 
   const toggleNavbar = () => {
-    setIsMobileNavVisible(!isMobileNavVisible);
+    setIsMobileNavVisible(prev => !prev);
   };
+
+  const closeNavbar = () => {
+    setIsMobileNavVisible(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (mobileNavRef.current && !mobileNavRef.current.contains(event.target)) {
+        closeNavbar();
+      }
+    };
+    if (isMobileNavVisible) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileNavVisible]);
 
   return (
     <div className={`w-full ${theme === 'light' ? 'bg-gray-300' : 'bg-black'} sticky top-0 z-50 ${theme === 'light' ? 'text-black' : 'text-white'}`}>
@@ -26,7 +47,7 @@ const Navbar = () => {
             <a
               href="#banner"
               className={`relative group px-4 py-3 transition-all ${theme === 'light' ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-600'} flex items-center`}
-              onClick={() => setShow(!show)}
+              onClick={closeNavbar}
             >
               <span className='text-xl font-bold'>Home</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -35,7 +56,7 @@ const Navbar = () => {
             <a
               href="#about"
               className={`relative group px-4 py-3 transition-all ${theme === 'light' ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-600'} flex items-center`}
-              onClick={() => setShow(!show)}
+              onClick={closeNavbar}
             >
               <span className='text-xl font-bold'>About Us</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -44,7 +65,7 @@ const Navbar = () => {
             <a
               href="#workingprocess"
               className={`relative group px-4 py-3 transition-all ${theme === 'light' ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-600'} flex items-center`}
-              onClick={() => setShow(!show)}
+              onClick={closeNavbar}
             >
               <span className='text-xl font-bold'>Process</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -53,7 +74,7 @@ const Navbar = () => {
             <a
               href="#tech-stack"
               className={`relative group px-4 py-3 transition-all ${theme === 'light' ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-600'} flex items-center`}
-              onClick={() => setShow(!show)}
+              onClick={closeNavbar}
             >
               <span className='text-xl font-bold'>Technologies</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -62,7 +83,7 @@ const Navbar = () => {
             <a
               href="#services"
               className={`relative group px-4 py-3 transition-all ${theme === 'light' ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-600'} flex items-center`}
-              onClick={() => setShow(!show)}
+              onClick={closeNavbar}
             >
               <span className='text-xl font-bold'>Services</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -73,6 +94,7 @@ const Navbar = () => {
           <a
             href="#contact"
             className={`bg-red-200 hover:bg-red-500 font-bold rounded-lg text-sm px-5 py-2.5 ${theme === 'light' ? 'text-black hover:text-white' : 'text-white hover:text-white'}`}
+            onClick={closeNavbar}
           >
             Contact Us
           </a>
@@ -85,46 +107,46 @@ const Navbar = () => {
         />
       </div>
       {isMobileNavVisible && (
-        <div className={ `w-full md:hidden flex flex-col items-end  ${theme === 'light' ? 'bg-gray-300' : 'bg-black'} ${theme === 'light' ? 'text-black' : 'text-white'} py-5 px-5`}>
+        <div ref={mobileNavRef} className={`w-full md:hidden flex flex-col items-end ${theme === 'light' ? 'bg-gray-300' : 'bg-black'} ${theme === 'light' ? 'text-black' : 'text-white'} py-5 px-5`}>
           <a
             href="#banner"
             className="block py-4 text-lg"
-            onClick={() => setShow(!show)}
+            onClick={closeNavbar}
           >
             Home
           </a>
           <a
             href="#about"
             className="block py-4 text-lg"
-            onClick={() => setShow(!show)}
+            onClick={closeNavbar}
           >
             About Us
           </a>
           <a
             href="#workingprocess"
             className="block py-4 text-lg"
-            onClick={() => setShow(!show)}
+            onClick={closeNavbar}
           >
             Process
           </a>
           <a
             href="#tech-stack"
             className="block py-4 text-lg"
-            onClick={() => setShow(!show)}
+            onClick={closeNavbar}
           >
             Technologies
           </a>
           <a
             href="#services"
             className="block py-4 text-lg"
-            onClick={() => setShow(!show)}
+            onClick={closeNavbar}
           >
             Services
           </a>
           <a
             href="#contact"
             className="block py-4 text-lg"
-            onClick={() => setShow(!show)}
+            onClick={closeNavbar}
           >
             Contact Us
           </a>

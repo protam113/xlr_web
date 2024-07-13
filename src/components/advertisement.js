@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "../context/themeContext";
-import { FaLaptopCode, FaMobileAlt, FaPaintBrush, FaRocket } from 'react-icons/fa';
+import { FaLaptopCode, FaPaintBrush, FaRocket } from 'react-icons/fa';
 
 const ShuffleHero = () => {
     const { theme } = useTheme();
@@ -32,7 +32,7 @@ return (
         Optimized solutions with quick turnaround times.
     </p>
     <a href="#contact" className="bg-indigo-500 text-white font-medium py-4 px-6 rounded transition-all hover:bg-indigo-600 active:scale-95">
-        Find a class
+        Contact Now
       </a>
     </div>
     <ShuffleGrid />

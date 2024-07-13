@@ -72,7 +72,7 @@ const Home = () => {
         </div>
 
       {showScrollTop && (
-        <button className="fixed bottom-10 right-10 bg-gray-500 hover:bg-gray-600 text-white text-lg p-3 rounded-full shadow-lg" onClick={scrollTop}>
+        <button className="fixed bottom-10 right-10 bg-red-500 hover:bg-red-600 text-white text-lg p-3 rounded-full shadow-lg" onClick={scrollTop}>
           <FiChevronUp />
         </button>
       )}
