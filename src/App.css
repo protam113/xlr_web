@@ -212,7 +212,7 @@
   display: block;
 }
 
-.popup {
+/* .popup {
   display: none;
   position: absolute;
   bottom: 60px;
@@ -224,6 +224,33 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
   z-index: 20;
+} */
+
+.popup-container {
+  position: relative;
 }
 
+.nucleus-container:hover .popup {
+  display: block;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nucleus-container:hover .popup {
+  opacity: 1;
+}
 
